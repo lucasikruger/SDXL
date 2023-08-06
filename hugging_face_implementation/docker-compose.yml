@@ -1,0 +1,21 @@
+# docker-compose.yml
+version: '3.9'
+
+services:
+  streamlit_HF:
+    container_name: stable_diffusion_HF_streamlit
+    # restart: always
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./app:/app
+    ports:
+      - "8501:8501"
+    stop_signal: SIGKILL
+    shm_size: '16gb' 
+    runtime: nvidia
+    environment:
+          - NVIDIA_VISIBLE_DEVICES=all
+          - NVIDIA_DRIVER_CAPABILITIES=all
+    command: streamlit run --server.port 8501 --server.address 0.0.0.0 /app.py
