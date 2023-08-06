@@ -9,8 +9,11 @@ RUN apt-get update && \
   apt-get autoclean
 
 WORKDIR /app
+RUN pip install --upgrade pip
+
 
 # Install dependencies
+COPY ./app/requirements.txt /app/requirements.txt
 RUN pip install -r requirements.txt 
 # Setting up permissions
 RUN echo "umask 002" >> /etc/profile

@@ -1,6 +1,6 @@
 # DOCKER FROM stable-diffusion-webui-docker
 
-![Logo](../../misc/media/webui_docker_logo.png)
+![Logo](../assets/media/webui_docker_logo.png)
 
 **REPO:** [stable-diffusion-webui-docker on GitHub](https://github.com/AbdBarho/stable-diffusion-webui-docker)
 
@@ -28,14 +28,14 @@ This repository uses NVIDIA Docker, enabling the use of GPUs when necessary. GPU
 #### IMPORTANT: The Model Weights
 The model uses **two** sets of weights: one for the base and another for the refiner.
 
-![Model Image](../../misc/media/base-refiner.webp)
+![Model Image](../assets/media/base-refiner.webp)
 
 From here, you have four ways to proceed: **AUTOMATIC1111**, **CPU - AUTOMATIC1111**, **INVOKEAI**, or **ComfyUI**.
 
 ### AUTOMATIC1111
 Repo: [AUTOMATIC1111 on GitHub](https://github.com/AUTOMATIC1111/stable-diffusion-webui-feature-showcase)
 
-![Automatic Img](../../misc/media/automatic1111_screenshots.png)
+![Automatic Img](../assets/media/automatic1111_screenshots.png)
 
 ### CPU - AUTOMATIC1111
 Same as before but with CPU, not GPU
@@ -43,12 +43,12 @@ Same as before but with CPU, not GPU
 ### INVOKE AI
 Repo: [INVOKE AI on GitHub](https://github.com/invoke-ai/InvokeAI)
 
-![Invoke Img](../../misc/media/invokeAI_screenshots.png)
+![Invoke Img](../assets/media/invokeAI_screenshots.png)
 
 ### COMFY UI
 Repo: [COMFY UI on GitHub](https://github.com/comfyanonymous/ComfyUI)
 
-![Comfy Img](../../misc/media/comfyUI_screenshots.png)
+![Comfy Img](../assets/media/comfyUI_screenshots.png)
 
 ## What do the scripts do?
 

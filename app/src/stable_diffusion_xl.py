@@ -50,7 +50,7 @@ class StableDifussionXL():
         :param high_noise_frac: float, Fraction at which the refiner starts denoising.
         :return: list, List of PIL images.
         """
-        self.validate_inference(prompt, num_images_per_prompt, negative_prompt,seed, n_steps, use_refiner, high_noise_frac)
+        self.validate_inference(prompt, negative_prompt, num_images_per_prompt,seed, n_steps, use_refiner, high_noise_frac)
         
             
         model_text = "Image generated using: "
@@ -121,8 +121,10 @@ class StableDifussionXL():
         """
         Validate the inference parameters.
         """
-        if not isinstance(prompt, str) or not isinstance(negative_prompt, str):
-            raise TypeError('prompts must be str')
+        if not isinstance(prompt, str):
+            raise TypeError('prompt must be str')
+        if not isinstance(negative_prompt, str):
+            raise TypeError('negative_prompt must be str')
         if seed is not None and not isinstance(seed, int):
             raise TypeError('seed must be an int')
         if not isinstance(n_steps, int):
@@ -133,7 +135,8 @@ class StableDifussionXL():
             raise ValueError('num_images_per_prompt must be between 1 and 8')
         if not isinstance(use_refiner, bool):
             raise TypeError('use_refiner must be a boolean')
-        if not isinstance(high_noise_frac, float):
-            raise TypeError('high_noise_frac must be a float')
-        if not (0 <= high_noise_frac <= 1):
-            raise ValueError('high_noise_frac must be between 0 and 1')
+        if high_noise_frac is not None:
+            if not isinstance(high_noise_frac, float):
+                raise TypeError('high_noise_frac must be a float')
+            if not (0 <= high_noise_frac <= 1):
+                raise ValueError('high_noise_frac must be between 0 and 1')
