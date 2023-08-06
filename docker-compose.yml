@@ -2,8 +2,8 @@
 version: '3.9'
 
 services:
-  streamlit_HF:
-    container_name: stable_diffusion_HF_streamlit
+  stable_diffusion_HF_no_api_streamlit:
+    container_name: stable_diffusion_HF_no_api_streamlit
     # restart: always
     build: 
       context: .
