@@ -28,7 +28,7 @@ This repository uses NVIDIA Docker, enabling the use of GPUs when necessary. GPU
 #### IMPORTANT: The Model Weights
 The model uses **two** sets of weights: one for the base and another for the refiner.
 
-![Model Image](../assets/media/base-refiner.webp)
+![Model Image](../../assets/media/base-refiner.webp)
 
 From here, you have four ways to proceed: **AUTOMATIC1111**, **CPU - AUTOMATIC1111**, **INVOKEAI**, or **ComfyUI**.
 
