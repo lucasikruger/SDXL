@@ -1,0 +1,36 @@
+# docker-compose.yml
+version: '3.9'
+
+services:
+
+  api_server_stable_diffusion_hf:
+      container_name: api_server_stable_diffusion_hf
+      # restart: always
+      build: 
+        context: .
+        dockerfile: Dockerfile
+      volumes:
+        - ./api/app:/app
+      ports:
+        - "8502:8502" #api ports
+      stop_signal: SIGKILL
+      shm_size: '16gb' 
+      runtime: nvidia
+      environment:
+            - NVIDIA_VISIBLE_DEVICES=all
+            - NVIDIA_DRIVER_CAPABILITIES=all
+      command: echo "start api server"
+
+
+  client_stable_diffusion_hf:
+    container_name: client_stable_diffusion_hf
+    # restart: always
+    build: 
+      context: ./client/
+      dockerfile: Dockerfile
+    volumes:
+      - ./client/app:/app
+    ports:
+      - "8501:8501"
+    stop_signal: SIGKILL
+    command: streamlit run --server.port 8501 --server.address 0.0.0.0 app.py
