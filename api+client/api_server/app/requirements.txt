@@ -1,0 +1,7 @@
+fastapi
+uvicorn
+Pillow
+# transformers
+# accelerate
+# invisible-watermark>=0.2.0
+# diffusers>=0.19.0

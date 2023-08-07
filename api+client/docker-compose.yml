@@ -7,10 +7,10 @@ services:
       container_name: api_server_stable_diffusion_hf
       # restart: always
       build: 
-        context: .
+        context: ./api_server/
         dockerfile: Dockerfile
       volumes:
-        - ./api/app:/app
+        - ./api_server/app:/app
       ports:
         - "8502:8502" #api ports
       stop_signal: SIGKILL
@@ -19,7 +19,7 @@ services:
       environment:
             - NVIDIA_VISIBLE_DEVICES=all
             - NVIDIA_DRIVER_CAPABILITIES=all
-      command: echo "start api server"
+      command: uvicorn src.api_server:app --reload --port 8502 --host 0.0.0.0
 
 
   client_stable_diffusion_hf:
