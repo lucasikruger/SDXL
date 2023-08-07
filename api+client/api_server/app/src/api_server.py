@@ -3,7 +3,7 @@ from pydantic import BaseModel
 from PIL import Image
 import base64
 import io
-from src.model_mock import StableDifussionXL
+from src.stable_diffusion_xl import StableDifussionXL
 from threading import Lock
 
 
