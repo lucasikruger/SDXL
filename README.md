@@ -1,7 +1,7 @@
 # STABLE DIFUSSION CLIENT IN STREAMLIT
 
-![Logo](assets/media/demo.png)
-
+## **New Image Comparer**
+![Comparer](assets/media/comparer.gif)
 ## Why?
 
 This repository offers an out-of-the-box web UI for using stable diffusion. It's designed to be easy to install, allowing you to quickly get started with stable diffusion.

@@ -1,5 +1,5 @@
 import streamlit as st
-from src.model_mock import StableDifussionXL
+from src.stable_diffusion_xl import StableDifussionXL
 from src.image_comparer import ImageComparer
 
 st.cache_resource
