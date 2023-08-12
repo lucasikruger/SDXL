@@ -13,6 +13,8 @@ class ImageComparer():
         self._model, self._preprocess = clip.load("ViT-L/14", device=self._device)
 
     def compare(self, image1, image2):
+        image1 = image1.resize((1024, 1024))
+        image2 = image2.resize((1024, 1024))
         # Change images to rgb or bgr
         img1 = self._preprocess(image1).to(self._device)
         img2 = self._preprocess(image2).to(self._device)
