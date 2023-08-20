@@ -123,8 +123,5 @@ if use_image_comparer or mode == "Only Image Comparer":
             with st.spinner("Loading Image Comparer..."):
                 image_comparer = load_image_comparer()
             with st.spinner("Comparing..."):
-                #images with same size
-                image1 = st.session_state.image1.resize((512, 512))
-                image2 = st.session_state.image2.resize((512, 512))
-                similarity = image_comparer.compare(image1, image2)
+                similarity = image_comparer.compare(st.session_state.image1, st.session_state.image2)
             st.success(f"Similarity: {similarity}")
